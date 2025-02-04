@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/mlops-zoomcamp/02/mlruns/450320832466036256/9bb20c1837da4822971a2cc87666f831/artifacts
+end_time: 1738698720307
+entry_point_name: ''
+experiment_id: '450320832466036256'
+lifecycle_stage: active
+run_id: 9bb20c1837da4822971a2cc87666f831
+run_name: suave-stag-95
+run_uuid: 9bb20c1837da4822971a2cc87666f831
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1738698699266
+status: 3
+tags: []
+user_id: codespace
