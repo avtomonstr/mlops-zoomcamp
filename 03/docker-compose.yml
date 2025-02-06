@@ -1,0 +1,25 @@
+version: '3'
+services:
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.20.1
+    ports:
+      - 5000:5000
+    volumes:
+      - ./mlflow:/home/mlflow
+    command: mlflow server --backend-store-uri sqlite:///home/mlflow/homework3.db --host 0.0.0.0 --port 5000
+  magic:
+    image: mageai/mageai:latest
+    command: mage start ${PROJECT_NAME}
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      USER_CODE_PATH: /workspaces/mlops-zoomcamp/03/${PROJECT_NAME}
+      ENV: ${ENV}
+    ports:
+      - 6789:6789
+    volumes:
+      - .:/home/src/
+    restart: on-failure:5
